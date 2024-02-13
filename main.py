@@ -13,3 +13,5 @@ while running:
             running = False
 
 pg.quit()
+
+#TODO: the game

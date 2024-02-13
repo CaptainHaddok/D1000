@@ -1,0 +1,31 @@
+gamestructure:
+ - statemachine to load gamestate
+	-states:
+		- menu
+			- character select
+				- new
+				- load
+			- settings
+			- quit
+		- in dungeon
+			- character sheet
+			- combat tracker
+			- tile map
+			- move to next tile(hover over option)		
+			- minimap?
+			- search option
+			- door option/description
+			- geography description
+			- tile description?
+			- leave/finish dungeon option
+		- combat screen
+			- character data
+			- monster data
+			- actions
+		- between dungeon screen
+			- shops
+			- stockmarket
+			- trainers
+		- dungeon select screen
+			- new dungeon selection
+			- completion detection
