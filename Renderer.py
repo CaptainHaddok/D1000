@@ -5,10 +5,32 @@ class Renderer:
     def __init__(self,screen):
         self.screen = screen
         self.queue = list()
+        self.fontList = dict()
 
     def addToQue(self,renderItem,renderType,priority): #renderItem = (ItemType, Item)
         #TODO: Check if renderItem is renderable
-        self.queue.append((priority,renderItem,renderType))
+        self.queue.append((priority,renderItem,renderType)) #(priority, item, type)
+    def addText(self,priority,text,fontname):
+        self.queue.append((priority,(text,fontname),1))
+        pass
+    def addRect(self):
+        # TODO: implement
+        pass
+    def addImage(self):
+        # TODO: implement
+        pass
+    def addPolygon(self):
+        # TODO: implement
+        pass
+    def addLine(self):
+        # TODO: implement
+        pass
+    def addCircle(self):
+        # TODO: implement
+        pass
+    def addElypse(self):
+        # TODO: implement
+        pass
 
     #TODO: Remove this when not needed anymore
     def sortQue(self):
@@ -16,40 +38,40 @@ class Renderer:
     def renderQue(self):
         self.queue.sort()
         for item in self.queue:
-            match item(2):
-                case 1:
-                    self.renderText(item(1))
-                case 2:
-                    self.renderRect(item(1))
-                case 3:
-                    self.renderImage(item(1))
-                case 4:
-                    self.renderPolygon(item(1))
-                case 5:
-                    self.renderLine(item(1))
-                case 6:
-                    self.renderCircle(item(1))
-                case 7:
-                    self.renderElypse(item(1))
-
-    def renderText(self,Item):
+            if item(2) == 1:
+                self.__renderText(item(1))
+            elif item(2) == 2:
+                self.__renderRect(item(1))
+            elif item(2) == 3:
+                self.__renderImage(item(1))
+            elif item(2) == 4:
+                self.__renderPolygon(item(1))
+            elif item(2) == 5:
+                self.__renderLine(item(1))
+            elif item(2) == 6:
+                self.__renderCircle(item(1))
+            elif item(2) == 7:
+                self.__renderElypse(item(1))
+    def __renderText(self,Item):
         #TODO: implement text rendering
         return
-    def renderRect(self,Item):
+    def __renderRect(self,Item):
         #TODO: implement Rect rendering
         return
-    def renderImage(self,Item):
+    def __renderImage(self,Item):
         #TODO: implement image rendering
         return
-    def renderPolygon(self,Item):
+    def __renderPolygon(self,Item):
         #TODO: implement Polygon rendering
         return
-    def renderLine(self,Item):
+    def __renderLine(self,Item):
         #TODO: implement Line rendering
         return
-    def renderCircle(self,Item):
+    def __renderCircle(self,Item):
         #TODO: implement Circle rendering
         return
-    def renderElypse(self,Item):
+    def __renderElypse(self,Item):
         #TODO: implement Elypse rendering
         return
+    def addFont(self,font,fontname):
+        self.fontList[fontname] = font

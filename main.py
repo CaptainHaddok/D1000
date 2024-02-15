@@ -9,9 +9,13 @@ clock = pygame.time.Clock()
 
 Renderer = Renderer.Renderer(screen)
 
+#testcode to make que working
 Renderer.addToQue("Biem",1,2)
 Renderer.addToQue("Bam", 10,2)
 Renderer.addToQue("Test",3,2)
+Renderer.addFont(pg.font.Font("fonts/Inlanders.otf",20),"testfont")
+
+
 print(Renderer.queue)
 Renderer.sortQue()
 print(Renderer.queue)
